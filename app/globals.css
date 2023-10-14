@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800;1,8..144,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root[theme="light"]  {
+  --background: rgb(186, 186, 186);
+  --text-color: rgb(32, 31, 31);
+
+  --theme: #fff;
+
+  --red-100: #b50016;
+  --red-200: #a30014;
+  --red-300: #910012;
+  --red-400: #7f000f;
+  --red-500: #6d000d;
+  --red-600: #5b000b;
+  --red-700: #480009;
+  --red-800: #360007;
+  --red-900: #240004;
+  --red-1000: #120002;
+
+  --yellow-100: #ffb800;
+  --yellow-200: #e6a600;
+  --yellow-300: #e6a600;
+  --yellow-400: #b38100;
+  --yellow-500: #996e00;
+  --yellow-600: #805c00;
+  --yellow-700: #664a00;
+  --yellow-800: #4c3700;
+  --yellow-900: #332500;
+  --yellow-1000: #191200;
+
+  --blue-100: #1c3441;
+  --blue-200: #192f3b;
+  --blue-300: #162a34;
+  --blue-400: #14242e;
+  --blue-500: #111f27;
+  --blue-600: #0e1a21;
+  --blue-700: #0b151a;
+  --blue-800: #081013;
+  --blue-900: #060a0d;
+  --blue-1000: #030506;
+
+  --color-bw: #000000;
+
+  --theme-icon: url('../public/light_mode.svg');
+
+  --shadow-primary: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+}
+
+:root[theme="dark"]  {
+  --background: rgb(27, 20, 20);
+  --text-color: rgb(163, 158, 158);
+
+  --theme: #0b0c11;
+
+  --red-100: #b50016;
+  --red-200: #bc1a2d;
+  --red-300: #910012;
+  --red-400: #c43345;
+  --red-500: #cb4d5c;
+  --red-600: #d36673;
+  --red-700: #e199a2;
+  --red-800: #e9b3b9;
+  --red-900: #f0ccd0;
+  --red-1000: #f8e6e8;
+
+  --yellow-100: #ffb800;
+  --yellow-200: #ffbf1a;
+  --yellow-300: #ffc633;
+  --yellow-400: #ffcd4d;
+  --yellow-500: #ffd466;
+  --yellow-600: #ffdc80;
+  --yellow-700: #ffe399;
+  --yellow-800: #ffeab3;
+  --yellow-900: #fff1cc;
+  --yellow-1000: #fff8e6;
+
+  --blue-100: #1c3441;
+  --blue-200: #334854;
+  --blue-300: #495d67;
+  --blue-400: #60717a;
+  --blue-500: #77858d;
+  --blue-600: #8e9aa0;
+  --blue-700: #a4aeb3;
+  --blue-800: #bbc2c6;
+  --blue-900: #d2d6d9;
+  --blue-1000: #e8ebec;
+
+  --color-bw: #ffffff;
+  --theme-icon: url('../public/dark_mode.svg');
+
+  --shadow-primary: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+
+}
+
+.shadow-primary {
+  box-shadow: var(--shadow-primary);
+}
+
+
+.bgs-yellow-100{background: var(--yellow-100);}
+.bgs-yellow-200{background: var(--yellow-200);}
+.bgs-yellow-300{background: var(--yellow-300);}
+.bgs-yellow-400{background: var(--yellow-400);}
+.bgs-yellow-500{background: var(--yellow-500);}
+.bgs-yellow-600{background: var(--yellow-600);}
+.bgs-yellow-700{background: var(--yellow-700);}
+.bgs-yellow-800{background: var(--yellow-800);}
+.bgs-yellow-900{background: var(--yellow-900);}
+.bgs-yellow-1000{background: var(--yellow-1000);}
+
+.bgs-red-100{background: var(--red-100);}
+.bgs-red-200{background: var(--red-200);}
+.bgs-red-300{background: var(--red-300);}
+.bgs-red-400{background: var(--red-400);}
+.bgs-red-500{background: var(--red-500);}
+.bgs-red-600{background: var(--red-600);}
+.bgs-red-700{background: var(--red-700);}
+.bgs-red-800{background: var(--red-800);}
+.bgs-red-900{background: var(--red-900);}
+.bgs-red-1000{background: var(--red-1000);}
+
+.bgs-blue-100{background: var(--blue-100);}
+.bgs-blue-200{background: var(--blue-200);}
+.bgs-blue-300{background: var(--blue-300);}
+.bgs-blue-400{background: var(--blue-400);}
+.bgs-blue-500{background: var(--blue-500);}
+.bgs-blue-600{background: var(--blue-600);}
+.bgs-blue-700{background: var(--blue-700);}
+.bgs-blue-800{background: var(--blue-800);}
+.bgs-blue-900{background: var(--blue-900);}
+.bgs-blue-1000{background: var(--blue-1000);}
+
+
+.color-yellow-100{color: var(--yellow-100);}
+.color-yellow-200{color: var(--yellow-200);}
+.color-yellow-300{color: var(--yellow-300);}
+.color-yellow-400{color: var(--yellow-400);}
+.color-yellow-500{color: var(--yellow-500);}
+.color-yellow-600{color: var(--yellow-600);}
+.color-yellow-700{color: var(--yellow-700);}
+.color-yellow-800{color: var(--yellow-800);}
+.color-yellow-900{color: var(--yellow-900);}
+.color-yellow-1000{color: var(--yellow-1000);}
+
+.color-red-100{color: var(--red-100);}
+.color-red-200{color: var(--red-200);}
+.color-red-300{color: var(--red-300);}
+.color-red-400{color: var(--red-400);}
+.color-red-500{color: var(--red-500);}
+.color-red-600{color: var(--red-600);}
+.color-red-700{color: var(--red-700);}
+.color-red-800{color: var(--red-800);}
+.color-red-900{color: var(--red-900);}
+.color-red-1000{color: var(--red-1000);}
+
+.color-blue-100{color: var(--blue-100);}
+.color-blue-200{color: var(--blue-200);}
+.color-blue-300{color: var(--blue-300);}
+.color-blue-400{color: var(--blue-400);}
+.color-blue-500{color: var(--blue-500);}
+.color-blue-600{color: var(--blue-600);}
+.color-blue-700{color: var(--blue-700);}
+.color-blue-800{color: var(--blue-800);}
+.color-blue-900{color: var(--blue-900);}
+.color-blue-1000{color: var(--blue-1000);}
+
+.color-bw{color: var(--color-bw);}
+
+
+.border-color-yellow-100{border-color: var(--yellow-100);}
+.border-color-yellow-200{border-color: var(--yellow-200);}
+.border-color-yellow-300{border-color: var(--yellow-300);}
+.border-color-yellow-400{border-color: var(--yellow-400);}
+.border-color-yellow-500{border-color: var(--yellow-500);}
+.border-color-yellow-600{border-color: var(--yellow-600);}
+.border-color-yellow-700{border-color: var(--yellow-700);}
+.border-color-yellow-800{border-color: var(--yellow-800);}
+.border-color-yellow-900{border-color: var(--yellow-900);}
+.border-color-yellow-1000{border-color: var(--yellow-1000);}
+
+.border-color-red-100{border-color: var(--red-100);}
+.border-color-red-200{border-color: var(--red-200);}
+.border-color-red-300{border-color: var(--red-300);}
+.border-color-red-400{border-color: var(--red-400);}
+.border-color-red-500{border-color: var(--red-500);}
+.border-color-red-600{border-color: var(--red-600);}
+.border-color-red-700{border-color: var(--red-700);}
+.border-color-red-800{border-color: var(--red-800);}
+.border-color-red-900{border-color: var(--red-900);}
+.border-color-red-1000{border-color: var(--red-1000);}
+
+.border-color-blue-100{border-color: var(--blue-100);}
+.border-color-blue-200{border-color: var(--blue-200);}
+.border-color-blue-300{border-color: var(--blue-300);}
+.border-color-blue-400{border-color: var(--blue-400);}
+.border-color-blue-500{border-color: var(--blue-500);}
+.border-color-blue-600{border-color: var(--blue-600);}
+.border-color-blue-700{border-color: var(--blue-700);}
+.border-color-blue-800{border-color: var(--blue-800);}
+.border-color-blue-900{border-color: var(--blue-900);}
+.border-color-blue-1000{border-color: var(--blue-1000);}
+
+.theme-icon{
+  background: var(--theme-icon);
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--theme);
+}
+
+/* fonts */
+.font-family-Raleway {font-family: 'Raleway', sans-serif;}
+.font-family-Roboto {font-family: 'Roboto', sans-serif;}
+.font-family-Roboto-Slab {font-family: 'Roboto Slab', serif;}
+.font-family-Roboto-Serif {font-family: 'Roboto Serif', serif;}
+.font-family-Lora {font-family: 'Lora', serif;}
+.font-family-Didot {font-family: "GFS+Didot";}
+.font-family-Maven-Pro {font-family: 'Maven Pro', sans-serif;}
+.font-family-Fira-Sans {font-family: 'Fira Sans', sans-serif;}
+
+
+/* media queries */
+/* Nano Small Screen (ns) */
+@media (max-width: 359px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* Small small Screen (ss) */
+@media (min-width:360px) and (max-width: 640px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* Small Screen (sm) */
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: 94%;
+  }
+}
+
+/* Medium Screen (md) */
+@media (min-width: 768px) and (max-width: 1119px) {
+  /* Your CSS rules for medium screens here */
+  .frame-container {
+    width: 94%;
+  }
+}
+
+/* Large Screen (lg) */
+@media (min-width: 1120px) and (max-width: 1279px) {
+  /* Your CSS rules for large screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* Extra Large Screen (xl) */
+@media (min-width: 1280px) and (max-width: 1399px) {
+  /* Your CSS rules for extra large screens here */
+  .frame-container {
+    width: 88%;
+  }
+}
+
+/* 2 Extra Large Screen (2xl) */
+@media (min-width: 1400px) and (max-width: 1859px) {
+  /* Your CSS rules for 2 extra large screens here */
+  .frame-container {
+    width: 1344px;
+  }
+}
+
+/* 3 Extra Large Screen (3xl) */
+@media (min-width: 1860px) {
+  /* Your CSS rules for 3 extra large screens here */
+  .frame-container {
+    width: 1728px;
+  }
+}
+
+.set-bg {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+.set-bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+.set-bg-smart{
+  overflow: hidden;
+  position: relative;
+}
+.set-bg-smart-cover{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.set-bg-objContain{
+  object-fit: contain;
+}
+
+.set-bg-repeat {
+  background-size: cover;
+  background-repeat: repeat;
+  gap: 0;
+}
+
+.bg-hero-img{
+  background-image: url('../public/hero-img.jpg');
+  box-shadow: 0px 1000px 200px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.img-help{background-image: url('../public/healthcare.svg');}
+.bg-request-img{
+  background-image: url('../public/healthcare.svg');
+}
+.bg-upArrow-img{
+  background-image: url('../public/arrow_upward.svg');
+}
+.twitter-icon{background-image: url('../public/twitter-x-new-logo-vector-2.svg');}
+.dribble-icon{background-image: url('../public/dribble-svgrepo-com-1.svg');}
+.instagram-icon{background-image: url('../public/instagram-svgrepo-com-4.svg');}
+.threads-icon{background-image: url('../public/threads-seeklogo-com-22.svg');}
+.facebook-icon{background-image: url('../public/facebook-svgrepo-com-2.svg');}
+.discord-icon{background-image: url('../public/discord-color-seeklogo-com-22.svg');}
+.github-icon{background-image: url('../public/github-142-svgrepo-com-2.svg');}
+.linkedin-icon{background-image: url('../public/linkedin-svgrepo-com-2.svg');}
+
+.time-img{background-image: url('../public/time.svg');}
+.location-img{background-image: url('../public/location.svg');}
+
+.cat-card{
+  border-radius: 12px;
+border: 1px solid #353335;
+background: rgba(50, 53, 54, 0.50);
+backdrop-filter: blur(8px);
+}
+
+.cat-Mcard{
+  border-radius: 12px;
+border: 1px solid #E3E3E3;
+background: rgba(255, 255, 255, 0.90);
+box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+backdrop-filter: blur(6px);
+}
