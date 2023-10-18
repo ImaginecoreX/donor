@@ -1,6 +1,7 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import 'animate.css';
 
 // theme #################################################
 const toggleTheme = () => {
@@ -155,10 +156,18 @@ const Navbar = () => {
           <div className="w-[20px] h-[20px] theme-icon set-bg hover:cursor-pointer" onClick={toggleTheme}></div>
         </div>
       </div>
+
+      {/* small screen design ---------------------------------------------------- */}
+      <div className="pt-[26px]">
+        <div className="font-family-Roboto text-[20px] font-black">donor.</div>
+        <div>
+          <div></div>
+        </div>
+      </div>
+
+      
     </section>
   );
 };
 
 export default Navbar;
-
-

@@ -72,7 +72,7 @@ const Footer = () => {
   }, [pathname, searchParams]);
 
   return (
-    <section className="flex justify-center h-auto bgs-blue-100  pt-[40px] pb-[40px]">
+    <section className="flex justify-center h-auto bgs-blue-100  pt-[40px] pb-[40px] overflow-hidden">
       <div className="flex flex-col items-center justify-center frame-container ">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-[24px]">
@@ -100,7 +100,7 @@ const Footer = () => {
         </div>
 
 
-        <div className="flex items-center justify-between w-full pt-[20px]">
+        <div className="flex items-center justify-between w-full pt-[20px] ss:flex-col ss:gap-[26px] ss:mt-[20px]">
           <div><div className="font-family-Raleway text-[12px] font-medium leading-normal text-white">Copyright © 2023 <span className="font-semibold">ImaginecoreX (Pvt) Ltd.</span> All rights reserved | <span className="hover:text-blue-500 hover:cursor-pointer">Privacy Policy</span></div></div>
 
           <div className="flex items-center gap-[24px]">

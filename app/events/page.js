@@ -1,4 +1,4 @@
-import { EventCard } from "@/components/Cards";
+import { EventCard } from "../../components/Cards";
 import React from "react";
 
 const Events = () => {
