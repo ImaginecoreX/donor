@@ -50,6 +50,10 @@
   --blue-900: #060a0d;
   --blue-1000: #030506;
 
+  --green-60: #0a4433;
+
+  --orange-30: #ae350b;
+
   --color-bw: #000000;
 
   --theme-icon: url('../public/light_mode.svg');
@@ -96,6 +100,10 @@
   --blue-900: #d2d6d9;
   --blue-1000: #e8ebec;
 
+  --green-60: #19ab7f;
+
+  --orange-30: #fa5e28;
+
   --color-bw: #ffffff;
   --theme-icon: url('../public/dark_mode.svg');
 
@@ -141,6 +149,9 @@
 .bgs-blue-900{background: var(--blue-900);}
 .bgs-blue-1000{background: var(--blue-1000);}
 
+.bgs-green-60{background: var(--green-60);}
+
+.bgs-orange-30{background: var(--orange-30);}
 
 .color-yellow-100{color: var(--yellow-100);}
 .color-yellow-200{color: var(--yellow-200);}
@@ -371,6 +382,31 @@ backdrop-filter: blur(6px);
 .swiper {
   width: 740px;
   height: 470px;
+
+  @media (min-width: 768px) and (max-width: 900px){
+    width: 600px;
+    height: 350px;
+  }
+
+  @media (min-width: 746px) and (max-width: 768px){
+    width: 500px;
+    height: 350px;
+  }
+
+  @media (min-width: 606px) and (max-width: 746px){
+    width: 500px;
+    height: 300px;
+  }
+
+  @media (min-width: 490px) and (max-width: 606px){
+    width: 400px;
+    height: 250px;
+  }
+
+  @media (min-width: 200px) and (max-width: 490px){
+    width: 280px;
+    height: 180px;
+  }
 }
 
 .swiper-slide {

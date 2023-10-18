@@ -139,25 +139,17 @@ export const EventCard = () => {
   };
 
   return (
-    <div className="max-w-[278px] h-auto bg-white shadow-primary rounded-[12px] box-border p-[30px]">
+    <div className="w-[280px] h-auto bg-white shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
         <div className="font-family-Raleway text-[24px] font-semibold">
-          Title
+          Hair Donation 
         </div>
       </div>
       <div className="pt-[20px] border-b-[1px] pb-[20px]">
+        {/* use 81 characters in description */}
         <div className="font-family-Roboto text-[16px] font-normal">
-          Welcome to the Hope Gala 2023! Our charity event is a night of unity,
-          compassion,{" "}
-          <span className="text-orange-300 cursor-pointer" onClick={toggleShow}>
-            {show ? "" : "show more"}
-          </span>{" "}
-          {show
-            ? "and giving. Join us for an unforgettable evening filled with gourmet dining, captivating entertainment, and the chance to make a real difference. Every contribution and ticket purchase supports our mission to bring hope and positive change to those in need. Together, we can illuminate lives and create a brighter future. Be a part of something meaningful at the Hope Gala 2023."
-            : ""}{" "}
-          <span className="text-orange-300 cursor-pointer" onClick={toggleShow}>
-            {show ? "show less" : ""}
-          </span>
+          Welcome to the Hope Gala 2023! Our charity event is a night of unity, 
+          compassion, <a className="color-yellow-300" href="#"> show more...</a>
         </div>
       </div>
       <div className="flex items-center justify-between pt-[20px]">
@@ -172,7 +164,7 @@ export const EventCard = () => {
           <div className="w-[18px] h-[18px] set-bg location-img"></div>
           <div>Location</div>
         </div>
-        <div className="text-blue-600 "> View Location</div>
+        <a className="text-blue-600 " href="#"> View Location</a>
       </div>
     </div>
   );

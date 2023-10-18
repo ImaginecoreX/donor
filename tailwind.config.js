@@ -16,13 +16,13 @@ module.exports = {
         '10xl': '1728px',
       },
       screens: {
-        'ns': {'max': '359px'},
+        'ns': {'max': '360px'},
         // => @media (max-width: 349px) { ... }
 
         'ss': {'min':'360px','max': '640px'},
         // => @media (min-width: 360px) and (max-width: 640px) { ... }
 
-        'sm': {'min': '640px', 'max': '767px'},
+        'sm': {'min': '640px', 'max': '768px'},
         // => @media (min-width: 640px) and (max-width: 767px) { ... }
 
         'md': {'min': '768px', 'max': '1119px'},
