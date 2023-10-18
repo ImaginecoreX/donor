@@ -5,14 +5,14 @@ import ContactImage from "public/constact.svg";
 const Contact = () => {
   return (
     <div>
-      <section className="flex flex-col items-center min-h-screen w-ful pt-[120px] pb-[100px]">
+      <section className="flex flex-col items-center min-h-screen w-ful pt-[120px] pb-[100px] ss:pb-[40px] justify-center">
         <div className="flex flex-col items-center w-full frame-container">
-          <div className="flex w-full">
-            <div className="flex items-start flex-1 h-auto set-bg-smart">
+          <div className="flex w-full sm:flex-col ss:flex-col ">
+            <div className=" flex-1 h-auto set-bg-smart ss:w-full ss:mb-[30px] ss:h-[300px] ss:flex-none">
               <Image src={ContactImage} fill className="w-full h-auto "/>
             </div>
 
-            <div className="flex-1 h-auto  box-border p-[30px]">
+            <div className="flex-1 h-auto  box-border p-[30px] ss:p-0">
               <div>
                 <div className="text-[36px] font-family-Raleway font-medium pb-[24px]">
                   Contact us
