@@ -365,3 +365,75 @@ background: rgba(255, 255, 255, 0.90);
 box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
 backdrop-filter: blur(6px);
 }
+
+
+
+.swiper {
+  width: 740px;
+  height: 470px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-image: url("../public/cardimg1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(2n) {
+  background-image: url("../public/cardimg2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(3n) {
+  background-image: url("../public/cardimg3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(4n) {
+  background-image: url("../public/cardimg4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(5n) {
+  background-image: url("../public/cardimg5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(6n) {
+  background-image: url("../public/cardimg6.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(7n) {
+  background-image: url("../public/cardimg7.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(8n) {
+  background-image: url("../public/cardimg8.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide:nth-child(9n) {
+  background-image: url("../public/cardimg9.jpg");
+  background-size: cover;
+  background-position: center;}
+
+
