@@ -22,7 +22,7 @@ const Events = () => {
           <section className="w-full pt-[80px]">
             <div className="h-[100px] flex items-center w-full bgs-blue-400 rounded-[16px] "><div className="text-[36px] pl-[80px] h-fit font-semibold text-white">Ongoing Events</div></div>
 
-            <div className="bg-gray-100 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
+            <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
                 <EventCard />
                 <EventCard />
@@ -37,7 +37,7 @@ const Events = () => {
           <section className="w-full pt-[80px]">
             <div className="h-[100px] flex items-center w-full bgs-green-60 rounded-[16px] "><div className="text-[36px] pl-[80px] h-fit font-semibold text-white">Completed Events</div></div>
 
-            <div className="bg-gray-100 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
+            <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
                 <EventCard />
                 <EventCard />
@@ -52,7 +52,7 @@ const Events = () => {
           <section className="w-full pt-[80px]">
             <div className="h-[100px] flex items-center w-full bgs-orange-30 rounded-[16px] "><div className="text-[36px] pl-[80px] h-fit font-semibold text-white">Upcoming Events</div></div>
 
-            <div className="bg-gray-100 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
+            <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
                 <EventCard />
                 <EventCard />

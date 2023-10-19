@@ -139,7 +139,7 @@ export const EventCard = () => {
   };
 
   return (
-    <div className="w-[280px] h-auto bg-white shadow-primary rounded-[12px] box-border p-[30px]">
+    <div className="w-[280px] h-auto bgs-white-10 shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
         <div className="font-family-Raleway text-[24px] font-semibold">
           Hair Donation 
@@ -149,7 +149,7 @@ export const EventCard = () => {
         {/* use 81 characters in description */}
         <div className="font-family-Roboto text-[16px] font-normal">
           Welcome to the Hope Gala 2023! Our charity event is a night of unity, 
-          compassion, <a className="color-yellow-300" href="#"> show more...</a>
+          compassion, <a className="color-yellow-100" href="#"> show more...</a>
         </div>
       </div>
       <div className="flex items-center justify-between pt-[20px]">

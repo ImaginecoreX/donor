@@ -54,6 +54,10 @@
 
   --orange-30: #ae350b;
 
+  --gray-90: #e6e6e6;
+
+  --white-10: #ffffff;
+
   --color-bw: #000000;
 
   --theme-icon: url('../public/light_mode.svg');
@@ -104,6 +108,10 @@
 
   --orange-30: #fa5e28;
 
+  --gray-90: #333333;
+
+  --white-10: #e6e6e6;
+
   --color-bw: #ffffff;
   --theme-icon: url('../public/dark_mode.svg');
 
@@ -152,6 +160,10 @@
 .bgs-green-60{background: var(--green-60);}
 
 .bgs-orange-30{background: var(--orange-30);}
+
+.bgs-gray-90{background: var(--gray-90);}
+
+.bgs-white-10{background: var(--white-10);}
 
 .color-yellow-100{color: var(--yellow-100);}
 .color-yellow-200{color: var(--yellow-200);}
