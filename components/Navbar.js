@@ -77,7 +77,7 @@ const Navbar = () => {
         style={{ paddingTop: 26 }}
       >
         <div>
-          <div className="color-bw hover:cursor-pointer" onClick={navigateToHomePage}>Donor</div>
+          <div className="color-bw hover:cursor-pointer font-family-Roboto text-[20px] font-black" onClick={navigateToHomePage}>donor.</div>
         </div>
         <div className="flex items-center" style={{ columnGap: 24 }}>
           <div className={page == "home" ? "relative w-[53px]" : ""}>
@@ -158,7 +158,7 @@ const Navbar = () => {
       </div>
 
       {/* small screen design ---------------------------------------------------- */}
-      <div className="pt-[26px]">
+      <div className="pt-[26px] hidden">
         <div className="font-family-Roboto text-[20px] font-black">donor.</div>
         <div>
           <div></div>

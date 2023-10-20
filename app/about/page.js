@@ -2,7 +2,7 @@ import React from "react";
 import image1 from "public/about_img1.jpg";
 import Image from "next/image";
 import sriLankaMap from "public/sri_lanka_map.png";
-import { MemberCard } from "@/components/Cards";
+import { MemberCard } from "/components/Cards";
 
 const About = () => {
   return (

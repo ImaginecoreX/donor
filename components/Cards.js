@@ -5,7 +5,7 @@ import image1 from "public/about_img1.jpg";
 import timeImg from "public/time.svg";
 import locationImg from "public/location.svg";
 
-export default function CatCard() {
+export function CatCard() {
   return (
     <div className="cat-card box-border p-[20px] max-w-[320px] h-fit w-fit">
       <div className="">
