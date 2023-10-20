@@ -2,6 +2,14 @@ import { EventCard } from "@/components/Cards";
 import React from "react";
 import EventImageSlider from "@/components/EventImageSlider";
 
+// const eventData = {
+//   id: 1,
+//   name: "Event Name",
+//   description: "Event Description",
+//   // Other event properties
+// };
+
+
 const Events = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
@@ -24,12 +32,13 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 2, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 3, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 4, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 5, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 6, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+
               </div>
             </div>
           </section>
@@ -39,12 +48,13 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+
               </div>
             </div>
           </section>
@@ -54,12 +64,13 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
-                <EventCard />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+
               </div>
             </div>
           </section>
