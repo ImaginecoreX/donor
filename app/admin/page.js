@@ -3,10 +3,8 @@ import AddNewEvent from '@/components/AddNewEvent'
 import UserCount from '@/components/UserCount'
 import React from 'react'
 import profile from "public/profile.png"
-import Events from '@/components/EventsCards'
 import EventsCards from '@/components/EventsCards'
 import Request from '@/components/Request'
-import { Form } from '@/components/Form'
 
 const Cards = [
     {
