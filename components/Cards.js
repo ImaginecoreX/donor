@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import image1 from "public/about_img1.jpg";
+import Link from "next/link";
 import timeImg from "public/time.svg";
 import locationImg from "public/location.svg";
 
@@ -127,41 +128,27 @@ export const MemberCard = () => {
 
 // ###########################################################################
 
-export const EventCard = () => {
-  const [show, setShow] = useState(false);
-
-  const toggleShow = () => {
-    if (show) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-  };
+export const EventCard = ({ event }) => {
 
   return (
-    <div className="max-w-[278px] h-auto bg-white shadow-primary rounded-[12px] box-border p-[30px]">
+    <div className="w-[280px] h-auto bgs-white-10 shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
         <div className="font-family-Raleway text-[24px] font-semibold">
-          Title
+          Hair Donation
         </div>
       </div>
       <div className="pt-[20px] border-b-[1px] pb-[20px]">
+        {/* use 81 characters in description */}
         <div className="font-family-Roboto text-[16px] font-normal">
           Welcome to the Hope Gala 2023! Our charity event is a night of unity,
-          compassion,{" "}
-          <span className="text-orange-300 cursor-pointer" onClick={toggleShow}>
-            {show ? "" : "show more"}
-          </span>{" "}
-          {show
-            ? "and giving. Join us for an unforgettable evening filled with gourmet dining, captivating entertainment, and the chance to make a real difference. Every contribution and ticket purchase supports our mission to bring hope and positive change to those in need. Together, we can illuminate lives and create a brighter future. Be a part of something meaningful at the Hope Gala 2023."
-            : ""}{" "}
-          <span className="text-orange-300 cursor-pointer" onClick={toggleShow}>
-            {show ? "show less" : ""}
-          </span>
+          compassion,&nbsp;
+          <Link href="/events/[id]" as={`/events/${event.id}`} className="color-yellow-100">
+            show more...
+          </Link>
         </div>
       </div>
       <div className="flex items-center justify-between pt-[20px]">
-      <div className="relative flex items-center gap-[8px]">
+        <div className="relative flex items-center gap-[8px]">
           <div className="w-[18px] h-[18px] set-bg time-img"></div>
           <div>Time</div>
         </div>
@@ -172,8 +159,20 @@ export const EventCard = () => {
           <div className="w-[18px] h-[18px] set-bg location-img"></div>
           <div>Location</div>
         </div>
-        <div className="text-blue-600 "> View Location</div>
+        <a className="text-blue-600 " href="#"> View Location</a>
       </div>
     </div>
   );
 };
+
+
+// ###########################################################################
+
+export const DonationCards = () => {
+  return (
+    <div className="bg-red-100 h-auto w-full box-border px-4 py-4 rounded mt-4">
+      <label className="font-family-Roboto-Serif text-[18px] ">Book Donation</label><br />
+      <p className="mt-2 font-family-Roboto-Slab ">Books are not just a collection of pages; they are vessels of knowledge, imagination, and hope. Our charity organization <a className="color-yellow-300">see more...</a></p>
+    </div>
+  )
+}
