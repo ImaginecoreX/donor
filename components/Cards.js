@@ -6,7 +6,7 @@ import Link from "next/link";
 import timeImg from "public/time.svg";
 import locationImg from "public/location.svg";
 
-export const CatCard = () => {
+export function CatCard() {
   return (
     <div className="cat-card box-border p-[20px] max-w-[320px] h-fit w-fit">
       <div className="">

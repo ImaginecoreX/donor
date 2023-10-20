@@ -389,8 +389,6 @@ box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
 backdrop-filter: blur(6px);
 }
 
-
-
 .swiper {
   width: 740px;
   height: 470px;
@@ -484,4 +482,22 @@ backdrop-filter: blur(6px);
   background-size: cover;
   background-position: center;}
 
+::placeholder {
+  color: #f8f8ff;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--red-100);
+  border-radius: 2px;
+}
 

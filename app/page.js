@@ -1,9 +1,12 @@
-import { CatCard, RequestCard } from "@/components/Cards";
+import { CatCard, RequestCard } from "../components/Cards";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import React from "react";
 
 export default function Home() {
   return (
     <section>
+            <Navbar/>
       <section className="flex flex-col items-center justify-between w-full min-h-screen bg-hero-img set-bg-cover">
       <div className="flex flex-col items-center justify-center frame-container ">
         <div className="flex w-full h-[90vh] pt-[8vh]">
@@ -47,9 +50,13 @@ export default function Home() {
             <RequestCard/>
             <RequestCard/>
           </div>
+ 
+        
 
       </div>
     </section>
+    <Footer/>
+
     </section>
   );
 }
