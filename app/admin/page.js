@@ -17,9 +17,12 @@ const Dashboard = () => {
             <UserCount />
           </div>
 
-          <div className='w-[500px]'>
+          <div className=' flex flex-row '>
             <ChartG/>
+
+            <NewRequest />
           </div>
+
         </div>
         <div className='flex ss:flex-col gap-6 mt-5'>
           
