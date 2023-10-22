@@ -1,6 +1,6 @@
 // pages/events/[id].js
 
-import { DonationCards } from "@/components/Cards";
+import { DonationCards } from "../../../components/Cards";
 
 // import { useRouter } from 'next/router';
 
