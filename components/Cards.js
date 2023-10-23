@@ -176,3 +176,139 @@ export const DonationCards = () => {
     </div>
   )
 }
+
+// ###################################################
+
+export const LoadRequests = () => {
+
+  return (
+    <div className="ss:w-[100%] sm:w-[80%] md:w-[70%] lg:w-[40%] xl:w-[30%] w-[22%] p-3 shadow-primary rounded-xl flex flex-col hover:scale-[1.02] duration-300 hover:shadow-xl">
+
+      <div>
+        <img src="/hero-img.jpg" className="rounded-t-xl" />
+      </div>
+
+      <div className="mt-4">
+        <h2 className="text-xl font-semibold text-center">Request Title</h2> <hr />
+      </div>
+
+      <div className='flex justify-between my-4 flex-wrap gap-3'>
+        <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+          <label>Request type</label>
+          <label>Cash</label>
+        </div>
+        <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+          <label>Request</label>
+          <label>$1000</label>
+        </div>
+        <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+          <label>Timeline</label>
+          <label>ASAP</label>
+        </div>
+      </div>
+
+      <div className="mb-5">
+        <p>Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request Full Description of the Request </p>
+      </div>
+
+      <div className='flex justify-between'>
+        <label>A. A. James Gorden</label>
+        <label className='flex'><img src='location.svg' />New York</label>
+      </div>
+
+      <div className="flex justify-center py-[8px] bgs-red-100 hover:bg-red-800 rounded-md mt-3">
+        <button className="text-white font-bold">Donate Now</button>
+      </div>
+
+    </div>
+
+  )
+}
+
+// ######################################################
+
+export const MoreRequests = () => {
+  return (
+    <div className='flex p-3 rounded-lg border-solid border-[1px] border-slate-300 hover:shadow-md hover:border-yellow-400 flex-wrap'>
+
+      <div className='ss:w-full w-[30%]'>
+        <img src='/hero-img.jpg' className='object-contain border-solid border-[3px] border-white rounded-md' />
+      </div>
+
+      <div className='ss:w-full w-[70%] ss:px-1 px-5 ss:mt-2'>
+
+        <div className='mb-3'>
+          <h2 className='font-semibold text-xl'>Title of the request</h2>
+          <hr />
+        </div>
+
+        <div className='flex justify-between mb-3 flex-wrap gap-3'>
+          <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+            <label>Request type</label>
+            <label>Cash</label>
+          </div>
+          <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+            <label>Request</label>
+            <label>$1000</label>
+          </div>
+          <div className='ss:w-full w-[30%] flex flex-col items-center bgs-blue-100 text-white text-sm rounded-md py-[4px]'>
+            <label>Timeline</label>
+            <label>ASAP</label>
+          </div>
+        </div>
+
+        <div className='flex justify-between'>
+          <label>A. A. James Gorden</label>
+          <label className='flex'><img src='location.svg' />New York</label>
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
+
+// ###################################################
+
+export const QuickDonate = () => {
+  return (
+    <div className='flex justify-center'>
+
+      <div className='ss:w-[90%] w-2/3 p-6 rounded-lg shadow-primary flex flex-col items-center bg-white'>
+
+        <div className='mb-8'>
+          <h2 className='text-2xl font-semibold'>Quick Donations</h2>
+        </div>
+
+        <div className='ss:px-1 px-5 w-full'>
+
+          <div className='flex flex-col mb-5 gap-1'>
+            <label className='text-lg font-semibold'>Your Name:</label>
+            <input type='text' className='border-[1px] border-solid rounded-md p-[5px] ps-3' placeholder='Ex: Jimmy Donadson' />
+          </div>
+          <label className='text-lg font-semibold'>Amount:</label>
+          <div className='flex justify-around mb-8 gap-3 flex-wrap'>
+            <button className='flex justify-center items-center py-3 px-6 rounded-md border-solid border-[2px] border-yellow-400 hover:bg-yellow-400 hover:text-white hover:duration-200 font-semibold'>
+              $25
+            </button>
+            <button className='flex justify-center items-center py-3 px-6 rounded-md border-solid border-[2px] border-yellow-400 hover:bg-yellow-400 hover:text-white hover:duration-200 font-semibold'>
+              $50
+            </button>
+            <button className='flex justify-center items-center py-3 px-6 rounded-md border-solid border-[2px] border-yellow-400 hover:bg-yellow-400 hover:text-white hover:duration-200 font-semibold'>
+              $100
+            </button>
+            <button className='flex justify-center items-center py-3 px-6 rounded-md border-solid border-[2px] border-yellow-400 hover:bg-yellow-400 hover:text-white hover:duration-200 font-semibold'>
+              Other
+            </button>
+          </div>
+          <div className='flex mb-5'>
+            <button className='bgs-red-100 w-full p-[8px] rounded-md font-semibold text-white hover:bg-red-800 hover:duration-200'>Donate</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
