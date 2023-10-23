@@ -1,6 +1,6 @@
 import { EventCard } from "../../components/Cards";
 import React from "react";
-import EventImageSlider from "@/components/EventImageSlider";
+import EventImageSlider from "../../components/EventImageSlider";
 
 // const eventData = {
 //   id: 1,
