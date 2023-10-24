@@ -7,7 +7,7 @@ const NewRequest = () => {
         <div className='flex text-black mt-6 '>
             <div className='w-[600px] h-auto border rounded box-border bg-orange-50 px-6 py-6'>
                 <div className='flex justify-between items-center px-1 mb-4'>
-                    <span className=' font-family-Roboto text-blue-950 text-lg font-bold'>New Requests</span>
+                    <span className=' font-family-Roboto text-blue-950 text-2xl font-bold'>New Requests</span>
                     <a href='#' className='text-blue-800'>See All</a>
                 </div>
                 <div className='border box-border bg-gray-100 py-3 px-3 mt-2 rounded-[12px]'>
