@@ -504,3 +504,8 @@ backdrop-filter: blur(6px);
 .d-icon{
   font-size: 80px;
 }
+
+.donateChip{
+  width: calc(100% / 3 - 8px);
+}
+
