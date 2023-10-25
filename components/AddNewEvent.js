@@ -42,56 +42,13 @@ const AddNewEvent = () => {
 
                                 <div className="sm:col-span-4">
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Event Introduction
+                                        Event Description
                                     </label>
                                     <div className="mt-2">
                                         <textarea
                                             type="email"
                                             autoComplete="email"
-                                            rows={9}
-                                            cols={5}
-                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="sm:col-span-4">
-                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Description
-                                    </label>
-                                    <div className="mt-2">
-                                        <textarea
-                                            type="email"
-                                            autoComplete="email"
-                                            rows={10}
-                                            cols={5}
-                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="sm:col-span-3">
-                                    <label className="block text-sm font-medium leading-6 text-gray-900">
-                                        Sub Title (optional)
-                                    </label>
-                                    <div className="mt-2">
-                                        <input
-                                            type="text"
-                                            autoComplete="given-name"
-                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="sm:col-span-4">
-                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Description (optional)
-                                    </label>
-                                    <div className="mt-2">
-                                        <textarea
-                                            type="email"
-                                            autoComplete="email"
-                                            rows={16}
+                                            rows={40}
                                             cols={5}
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -111,6 +68,19 @@ const AddNewEvent = () => {
                                     </div>
                                 </div>
 
+                                <div className="col-span-full">
+                                    <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                                        District
+                                    </label>
+                                    <div className="mt-2">
+                                        <select className='block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'>
+                                            <option value="1">Kandy</option>
+                                            <option value="2">Colombo</option>
+                                            <option value="3">Ratnapura</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
                                         Date
@@ -121,6 +91,45 @@ const AddNewEvent = () => {
                                             autoComplete="postal-code"
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
+                                    </div>
+                                </div>
+
+                                <div className="sm:col-span-2">
+                                    <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Time (from)
+                                    </label>
+                                    <div className="mt-2">
+                                        <input
+                                            type="time"
+                                            autoComplete="postal-code"
+                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="sm:col-span-2">
+                                    <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Time (to)
+                                    </label>
+                                    <div className="mt-2">
+                                        <input
+                                            type="time"
+                                            autoComplete="postal-code"
+                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="col-span-full">
+                                    <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
+                                        Event Status
+                                    </label>
+                                    <div className="mt-2">
+                                        <select className='block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'>
+                                            <option value="1">Ongoing</option>
+                                            <option value="2">Completed</option>
+                                            <option value="3">Upcoming</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
