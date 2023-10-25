@@ -21,7 +21,7 @@ const Dashboard = () => {
           </div>
 
 
-          <div className=' flex  ss:flex-col sm:flex-col  md:flex-row  lg:flex-row'>
+          <div className='flex ss:flex-col sm:flex-col md:flex-row lg:flex-row'>
 
             <ChartG/>
 
@@ -37,7 +37,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-
+    </div>
   )
 }
 
