@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
@@ -52,20 +52,32 @@ const currency = [
 ];
 
 const DonateModal = ({ click }) => {
+  
   const [isDedicated, setIsDedicated] = useState(false);
+  const [isGiveOnce, setIsGiveOnce] = useState(false);
+  const [isCommentPage, setIsCommentPage] = useState(false);
+  const [defaultAmount, setDefaultAmount] = useState('4000');
+  const [selectedAmont, setSelectedAmont] = useState(''); 
+  const [selectedOtion, setSelectedOption] = useState('');
+ 
+  const handleInputChange = (event) => {
+    setSelectedAmont(event.target.value); // Update selectedAmount when typing
+  };
+
   const toggleDedicated = () => {
     setIsDedicated(!isDedicated);
   };
 
-  const [isCommentPage, setIsCommentPage] = useState(false);
   const toggleCommentPage = () => {
     setIsCommentPage(!isCommentPage);
   };
 
-  const [isGiveOnce, setIsGiveOnce] = useState(false);
-  const toggleGiveOnce = () => {setIsGiveOnce(!isGiveOnce);}
-  const [defaultAmount, setDefaultAmount] = useState('4000');
-  const [selectedAmont, setSelectedAmont] = useState('');
+  useEffect(()=>{
+    isGiveOnce?setSelectedAmont('8000'):setSelectedAmont('4000')
+  },[])
+
+  
+  const toggleGiveOnce = (type) => {type==='once'?setIsGiveOnce(true):setIsGiveOnce(false);}
 
   return (
     <div className="w-[400px] h-auto bg-white  z-50 rounded-[12px] box-border p-[30px] flex flex-col items-center">
@@ -100,10 +112,10 @@ const DonateModal = ({ click }) => {
           </div>
 
           <div className="w-full h-[50px] flex border-color border-[1px] rounded-[12px] mb-[24px]">
-            <div onClick={()=>{toggleGiveOnce; defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'border-[3px] border-red-600 rounded-[12px]':''}`}>
+            <div onClick={()=>{toggleGiveOnce('once');setSelectedAmont('8000');setSelectedOption('8000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'border-[3px] border-red-600 rounded-[12px]':''}`}>
               Give Once
             </div>
-            <div onClick={()=>{toggleGiveOnce; defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'':'border-[3px] border-red-600 rounded-[12px]'}`}>
+            <div onClick={()=>{toggleGiveOnce('month');setSelectedAmont('4000');setSelectedOption('4000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'':'border-[3px] border-red-600 rounded-[12px]'}`}>
               <FavoriteIcon
                 sx={{ fill: "#fc3003", width: "16px", height: "16px",marginRight:'6px' }}
               />
@@ -116,7 +128,13 @@ const DonateModal = ({ click }) => {
             {donateAmounts.map((donate) => (
               <div
                 key={donate.id}
-                className={`${"py-[10px] donateChip flex justify-center items-center cursor-pointer  border-color border-[1px] rounded-[8px]"} ${defaultAmount===donate.amount?'border-blue-500 b':''}`}
+          
+                className={`${"py-[10px] donateChip flex justify-center items-center cursor-pointer  border-color border-[2px] rounded-[8px]"} ${donate.amount===selectedOtion?'border-[2px] border-red-600':''}`}
+                onClick={() => {
+                  {donate.type==='K'?setSelectedAmont(donate.amount * 1000):setSelectedAmont(donate.amount)}
+                  setDefaultAmount('');
+                  setSelectedOption(donate.amount);
+                }}
               >
                 <div className="font-family-Roboto text-[16px]">
                 Rs {donate.amount}{donate.type==='K'?donate.type:''}
@@ -134,6 +152,8 @@ const DonateModal = ({ click }) => {
                 <input
                   type="text"
                   className="w-2/3 h-full text-[24px] font-family-Roboto font-normal text-blue-600 focus:outline-none"
+                  value={selectedAmont}
+                  onChange={handleInputChange}
                 />
               </div>
 
