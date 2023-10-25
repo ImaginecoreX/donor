@@ -1,12 +1,6 @@
-// pages/events/[id].js
-
 import { DonationCards } from "../../../components/Cards";
 
-// import { useRouter } from 'next/router';
-
 const EventDetails = () => {
-  // const router = useRouter();
-  // const { id } = router.query; // Access the event ID from the URL
 
   return (
     <div>

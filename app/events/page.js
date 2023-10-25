@@ -1,16 +1,28 @@
+'use client'
 import { EventCard } from "../../components/Cards";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import EventImageSlider from "../../components/EventImageSlider";
-
-// const eventData = {
-//   id: 1,
-//   name: "Event Name",
-//   description: "Event Description",
-//   // Other event properties
-// };
-
+import axios from 'axios'
 
 const Events = () => {
+
+  const [eventData, setEventData] = useState([]);
+
+  const loadEvents = async () => {
+    await axios.get("http://localhost:8000/api/get-all-event")
+      .then((response) => {
+        console.log(response.data);
+        setEventData(response.data.allEvent);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  useEffect(() => {
+    loadEvents();
+  }, [])
+
   return (
     <div className="flex flex-col items-center w-full min-h-screen overflow-hidden">
       <div className="flex md:flex-col ns:flex-col sm:flex-col ss:flex-col ss:items-center sm:items-center md:items-center ns:items-center mt-[120px] 3xl:items-center 3xl:w-[70%]">
@@ -32,13 +44,24 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 2, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 3, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 4, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 5, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 6, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-
+                {eventData.map((event) => {
+                  if (event.event_statuses_id === 1) {
+                    return (
+                      <EventCard
+                        key={event.id}
+                        events={{
+                          id: event.id,
+                          name: event.title,
+                          description: event.description,
+                          time: event.time,
+                          location: event.location_link
+                        }}
+                      />
+                    );
+                  } else {
+                    return null; // Or you can return a placeholder or empty element
+                  }
+                })}
               </div>
             </div>
           </section>
@@ -48,12 +71,24 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
+                {eventData.map((event) => {
+                  if (event.event_statuses_id === 2) {
+                    return (
+                      <EventCard
+                        key={event.id}
+                        events={{
+                          id: event.id,
+                          name: event.title,
+                          description: event.description,
+                          time: event.time,
+                          location: event.location_link
+                        }}
+                      />
+                    );
+                  } else {
+                    return null; // Or you can return a placeholder or empty element
+                  }
+                })}
 
               </div>
             </div>
@@ -64,13 +99,24 @@ const Events = () => {
 
             <div className="bgs-gray-90 flex box-border px-6 py-6 h-auto overflow-y-auto w-full mt-6 rounded-[10px]">
               <div className=" flex gap-[24px] mt-[20px]">
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-              <EventCard event={{ id: 1, name: "Hair Donation", description: "Welcome to the Hope Gala 2023!", time: "16:00 2023-10-07", location: "Some Location" }} />
-
+                {eventData.map((event) => {
+                  if (event.event_statuses_id === 3) {
+                    return (
+                      <EventCard
+                        key={event.id}
+                        events={{
+                          id: event.id,
+                          name: event.title,
+                          description: event.description,
+                          time: event.time,
+                          location: event.location_link
+                        }}
+                      />
+                    );
+                  } else {
+                    return null; // Or you can return a placeholder or empty element
+                  }
+                })}
               </div>
             </div>
           </section>

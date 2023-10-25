@@ -128,22 +128,23 @@ export const MemberCard = () => {
 
 // ###########################################################################
 
-export const EventCard = ({ event }) => {
+export const EventCard = ({ events }) => {
 
   return (
     <div className="w-[280px] h-auto bgs-white-10 shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
         <div className="font-family-Raleway text-[24px] font-semibold">
-          Hair Donation
+          {events.name}
         </div>
       </div>
       <div className="pt-[20px] border-b-[1px] pb-[20px]">
         {/* use 81 characters in description */}
         <div className="font-family-Roboto text-[16px] font-normal">
-          Welcome to the Hope Gala 2023! Our charity event is a night of unity,
-          compassion,&nbsp;
-          <Link href="/events/[id]" as={`/events/${event.id}`} className="color-yellow-100">
-            show more...
+          {events.description.length > 150
+            ? `${events.description.slice(0, 150)}...`
+            : events.description}&nbsp;
+          <Link href={`/events/${events.id}`} className="color-yellow-100">
+            show more
           </Link>
         </div>
       </div>
@@ -152,7 +153,7 @@ export const EventCard = ({ event }) => {
           <div className="w-[18px] h-[18px] set-bg time-img"></div>
           <div>Time</div>
         </div>
-        <div>16:00 2023-10-07</div>
+        <div>{events.time}</div>
       </div>
       <div className="flex items-center justify-between pt-[12px]">
         <div className="relative flex items-center gap-[8px]">
