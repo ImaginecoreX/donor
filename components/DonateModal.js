@@ -59,6 +59,7 @@ const DonateModal = ({ click }) => {
   const [defaultAmount, setDefaultAmount] = useState('4000');
   const [selectedAmont, setSelectedAmont] = useState(''); 
   const [selectedOtion, setSelectedOption] = useState('');
+  const [selectedCurrency, setSelectedCurrency] = useState('Rs');
  
   const handleInputChange = (event) => {
     setSelectedAmont(event.target.value); // Update selectedAmount when typing
@@ -80,7 +81,7 @@ const DonateModal = ({ click }) => {
   const toggleGiveOnce = (type) => {type==='once'?setIsGiveOnce(true):setIsGiveOnce(false);}
 
   return (
-    <div className="w-[400px] h-auto bg-white  z-50 rounded-[12px] box-border p-[30px] flex flex-col items-center">
+    <div className="w-[400px] hide-scrollbar ss:w-[90%] ns:w-full h-auto max-h-[90vh] overflow-y-scroll bg-white  z-50 rounded-[12px] box-border p-[30px] flex flex-col items-center">
       {isCommentPage ? (
         <div className="flex flex-col w-full">
           <div className="flex items-center gap-[16px] border-b-[1px] border-color pb-[24px]">
@@ -112,12 +113,12 @@ const DonateModal = ({ click }) => {
           </div>
 
           <div className="w-full h-[50px] flex border-color border-[1px] rounded-[12px] mb-[24px]">
-            <div onClick={()=>{toggleGiveOnce('once');setSelectedAmont('8000');setSelectedOption('8000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'border-[3px] border-red-600 rounded-[12px]':''}`}>
+            <div onClick={()=>{toggleGiveOnce('once');setSelectedAmont('8000');setSelectedOption('8000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'bg-red-600 text-white rounded-l-[12px]':''}`}>
               Give Once
             </div>
-            <div onClick={()=>{toggleGiveOnce('month');setSelectedAmont('4000');setSelectedOption('4000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'':'border-[3px] border-red-600 rounded-[12px]'}`}>
+            <div onClick={()=>{toggleGiveOnce('month');setSelectedAmont('4000');setSelectedOption('4000'); defaultAmount==='4000'?setDefaultAmount('8000'):setDefaultAmount('4000')}} className={`${"flex items-center justify-center w-1/2 h-full font-family-Roboto cursor-pointer"} ${isGiveOnce?'':'text-white bg-red-600 rounded-r-[12px]'}`}>
               <FavoriteIcon
-                sx={{ fill: "#fc3003", width: "16px", height: "16px",marginRight:'6px' }}
+                sx={{ fill: "#fff", width: "16px", height: "16px",marginRight:'6px' }}
               />
                Monthly
             </div>
@@ -129,7 +130,7 @@ const DonateModal = ({ click }) => {
               <div
                 key={donate.id}
           
-                className={`${"py-[10px] donateChip flex justify-center items-center cursor-pointer  border-color border-[2px] rounded-[8px]"} ${donate.amount===selectedOtion?'border-[2px] border-red-600':''}`}
+                className={`${"py-[10px] donateChip flex justify-center items-center cursor-pointer  border-color border-[2px] rounded-[8px]"} ${donate.amount===selectedOtion?'bg-red-600 text-white shadow-md border-slate-300':''}`}
                 onClick={() => {
                   {donate.type==='K'?setSelectedAmont(donate.amount * 1000):setSelectedAmont(donate.amount)}
                   setDefaultAmount('');
@@ -137,7 +138,7 @@ const DonateModal = ({ click }) => {
                 }}
               >
                 <div className="font-family-Roboto text-[16px]">
-                Rs {donate.amount}{donate.type==='K'?donate.type:''}
+                {selectedCurrency} {donate.amount}{donate.type==='K'?donate.type:''}
                 </div>
               </div>
             ))}
@@ -147,7 +148,7 @@ const DonateModal = ({ click }) => {
             <div className="w-full h-[60px] flex justify-between rounded-[6px] border-[1px] border-solid border-color box-border px-[18px] py-[10px]">
               <div className="flex items-center h-full gap-[16px]">
                 <div className="font-family-Roboto text-[18px] text-gray-400">
-                  Rs
+                  {selectedCurrency}
                 </div>
                 <input
                   type="text"
@@ -158,7 +159,7 @@ const DonateModal = ({ click }) => {
               </div>
 
               <div className="flex-1">
-                <select className="px-[12px] py-[8px] focus:outline-none hover:bg-gray-100 rounded-[8px] after:right-[10px] after:absolute after:pointer-events-none">
+                <select className="px-[12px] py-[8px] focus:outline-none hover:bg-gray-100 rounded-[8px] after:right-[10px] after:absolute after:pointer-events-none" onChange={(event)=>{event.target.value==='LKR'?setSelectedCurrency('Rs'):event.target.value==='USD'?setSelectedCurrency('$'):event.target.value==='EUR'?setSelectedCurrency('€'):''}}>
                   {currency.map((currency) => (
                     <option key={currency.code}>{currency.code}</option>
                   ))}

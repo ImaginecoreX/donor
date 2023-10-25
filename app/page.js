@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import React, { useState } from "react";
 import DonateModal from "../components/DonateModal";
+import DonateNoticeCard from "../components/DonateNoticeCard";
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -22,7 +23,8 @@ export default function Home() {
             onClick={toggleShow}
           ></div>
 
-          <div className="z-[200]">
+          <div className="z-[200] w-full flex justify-center gap-[30px] ss:flex-col ns:flex-col ss:items-center ns:items-center">
+            <DonateNoticeCard/>
             <DonateModal click={toggleShow} />
           </div>
         </div>

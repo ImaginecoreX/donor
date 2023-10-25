@@ -501,6 +501,10 @@ backdrop-filter: blur(6px);
   border-radius: 2px;
 }
 
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
 .d-icon{
   font-size: 80px;
 }
@@ -509,3 +513,34 @@ backdrop-filter: blur(6px);
   width: calc(100% / 3 - 8px);
 }
 
+/* ############################################# */
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.loading-spinner::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent; /* You can adjust the border width */
+  border-top: 4px solid #3498db; /* Set the border color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Adjust the animation duration */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
