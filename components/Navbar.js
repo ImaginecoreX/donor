@@ -158,7 +158,7 @@ const Navbar = () => {
       </div>
 
       {/* small screen design ---------------------------------------------------- */}
-      <div className="pt-[26px] hidden">
+      <div className="pt-[26px] absolute 3xl:hidden 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden ss:visible ns:visible">
         <div className="font-family-Roboto text-[20px] font-black">donor.</div>
         <div>
           <div></div>

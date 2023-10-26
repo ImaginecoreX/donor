@@ -24,7 +24,7 @@ const Events = () => {
   }, [])
 
   return (
-    <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
+    <div className="flex flex-col items-center w-full min-h-screen overflow-hidden">
       <div className="flex md:flex-col ns:flex-col sm:flex-col ss:flex-col ss:items-center sm:items-center md:items-center ns:items-center mt-[120px] 3xl:items-center 3xl:w-[70%]">
         <div className="flex flex-col justify-center items-center md:items-center sm:items-center ss:items-center md:mb-8 w-1/4 box-border ps-9 md:w-[80%] 2xl:ms-[70px] sm:w-[80%] ss:w-[90%] ns:w-[90%] ">
           <div><div className="text-[64px] ns:text-[40px] color-yellow-400 font-bold font-family-Raleway  leading-normal">Events</div></div>
