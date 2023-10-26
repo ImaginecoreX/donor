@@ -1,13 +1,34 @@
+'use client'
+import { useState,useEffect } from "react";
 import { DonationCards } from "../../../components/Cards";
+import axios from 'axios'
 
-const EventDetails = () => {
+export default function EventDetails({ params }){
+
+  const [eventData, setEventData] = useState([]);
+
+  const searchEvent = async () => {
+    await axios.get(`http://localhost:8000/api/get-event/${params.id}`)
+      .then((response) => {
+        console.log(response.data);
+        setEventData(response.data.searchEvent);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  useEffect(() => {
+    searchEvent();
+  }, [params.id]);
 
   return (
     <div>
-      <div className="mt-[100px] mb-10 flex-col">
+      {eventData && (
+        <div className="mt-[100px] mb-10 flex-col">
         <div className="flex w-full h-auto justify-end">
           <div className="flex w-3/4 h-[100px] items-center bgs-yellow-300" style={{ borderRadius: '50px 0px 0px 50px' }}>
-            <span className="text-white text-[28px] font-family-Raleway font-semibold ms-11">Hair Donation</span>
+            <span className="text-white text-[28px] font-family-Raleway font-semibold ms-11">{eventData.title}</span>
           </div>
         </div>
         <div className="flex box-border px-11 sm:px-1 ns:px-1 ss:px-1  py-4 mt-6 md:flex-col sm:flex-col ss:flex-col ns:flex-col">
@@ -55,8 +76,9 @@ const EventDetails = () => {
           </div>
         </div>
       </div>
+      )}
+      
     </div>
   );
 };
 
-export default EventDetails;

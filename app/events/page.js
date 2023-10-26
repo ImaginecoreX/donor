@@ -59,7 +59,7 @@ const Events = () => {
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
               </div>
@@ -86,7 +86,7 @@ const Events = () => {
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
 
@@ -114,7 +114,7 @@ const Events = () => {
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
               </div>

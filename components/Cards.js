@@ -3,8 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import image1 from "public/about_img1.jpg";
 import Link from "next/link";
-import timeImg from "public/time.svg";
-import locationImg from "public/location.svg";
+import { useRouter } from "next/navigation";
 
 export function CatCard() {
   return (
@@ -130,6 +129,11 @@ export const MemberCard = () => {
 
 export const EventCard = ({ events }) => {
 
+  const router = useRouter(); 
+  // const handleButtonClick = () => {
+  //   router.push(`/events/${events.id}`, { scroll: false });
+  // };
+
   return (
     <div className="w-[280px] h-auto bgs-white-10 shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
@@ -143,9 +147,13 @@ export const EventCard = ({ events }) => {
           {events.description.length > 150
             ? `${events.description.slice(0, 150)}...`
             : events.description}&nbsp;
-          <Link href={`/events/${events.id}`} className="color-yellow-100">
+          <Link href={`/events/${events.id}`} className="color-yellow-100" passHref>
             show more
           </Link>
+          {/* <button type="button" className="color-yellow-100" onClick={handleButtonClick}>
+          show more
+          </button> */}
+
         </div>
       </div>
       <div className="flex items-center justify-between pt-[20px]">
