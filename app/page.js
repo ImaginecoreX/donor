@@ -19,7 +19,7 @@ export default function Home() {
       {show && show == true ? (
         <div className="fixed z-[100] flex items-center justify-center   w-full h-[100vh]">
           <div
-            className="   w-full h-[100vh] bg-[#00000070] backdrop-blur-sm fixed"
+            className="w-full h-[100vh] bg-[#00000070] backdrop-blur-sm fixed"
             onClick={toggleShow}
           ></div>
 

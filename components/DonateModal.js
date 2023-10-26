@@ -51,7 +51,7 @@ const currency = [
   },
 ];
 
-const DonateModal = ({ click }) => {
+const DonateModal = () => {
   
   const [isDedicated, setIsDedicated] = useState(false);
   const [isGiveOnce, setIsGiveOnce] = useState(false);
@@ -95,7 +95,7 @@ const DonateModal = ({ click }) => {
           
           <textarea className="w-full border-[1px] h-[300px] border-color rounded-[12px] mt-[40px] px-[24px] py-[26px]" placeholder="Add your comment here..."/>
           <button
-            onClick={click}
+         
             className="font-family-Roboto w-full text-white bg-black py-[12px] rounded-[8px] mt-[32px] font-medium"
           >
             Add Comment
@@ -201,7 +201,6 @@ const DonateModal = ({ click }) => {
           </div>
 
           <button
-            onClick={click}
             className="font-family-Roboto w-full text-white bg-black py-[12px] rounded-[8px]"
           >
             Cancel
