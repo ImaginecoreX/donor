@@ -544,3 +544,7 @@ backdrop-filter: blur(6px);
     transform: rotate(360deg);
   }
 }
+
+.adminSidebar-scape{
+  width: calc(100% - 250px);
+}
