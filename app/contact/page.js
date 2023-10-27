@@ -37,6 +37,11 @@ const Contact = () => {
 
   }
 
+  const sendEmail = async ()=>{
+    
+    await axios.post().then().catch();
+
+  }
  
  
 
