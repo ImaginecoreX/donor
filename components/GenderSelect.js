@@ -1,23 +1,33 @@
-import * as React from "react";
-import Select from "@mui/joy/Select";
-import Option from "@mui/joy/Option";
-import Chip from "@mui/joy/Chip";
+import * as React from 'react';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
-export default function GenderSelect() {
+export default function GenderSelect({value,setValue}) {
+
+
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+
+
   return (
-    <Select
-    placeholder="Select a Gender"
-    endDecorator={
-      <Chip size="sm" color="danger" variant="soft">
-        +5
-      </Chip>
-    }
-    sx={{ width: 240 }}
-  >
-    <Option value="dog">Dog</Option>
-    <Option value="cat">Cat</Option>
-    <Option value="fish">Fish</Option>
-    <Option value="bird">Bird</Option>
-  </Select>
+    <FormControl>
+      <FormLabel id="demo-row-radio-buttons-group-label">Gender</FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
+        value={value}
+        onChange={handleChange}
+      >
+        <FormControlLabel value="2" control={<Radio />} label="Female"  />
+        <FormControlLabel value="1" control={<Radio />} label="Male" />
+      </RadioGroup>
+    </FormControl>
   );
 }

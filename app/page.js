@@ -31,6 +31,7 @@ export default function Home() {
       ) : (
         ""
       )}
+
       <section className="flex flex-col items-center justify-between w-full min-h-screen bg-hero-img set-bg-cover">
         <div className="flex flex-col items-center justify-center frame-container ">
           <div className="flex w-full h-[90vh] pt-[8vh]">

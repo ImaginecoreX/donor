@@ -598,6 +598,7 @@ backdrop-filter: blur(6px);
   outline: none;
   background-color: #30333a;
   padding-left: 2rem;
+  color: white;
 
 }
 
@@ -622,4 +623,10 @@ backdrop-filter: blur(6px);
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.bg-login{
+  border-radius: 20px;
+  background: rgba(50, 53, 54, 0.50);
+  backdrop-filter: blur(20px);
 }

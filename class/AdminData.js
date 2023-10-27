@@ -1,4 +1,5 @@
 class AdminData {
+    
     constructor(){
         // this._email = email;
         // this._fname = fname;
