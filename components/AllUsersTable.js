@@ -1,14 +1,15 @@
 'use client'
 import { Card, Typography } from "@material-tailwind/react";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 
 const TABLE_HEAD = [
-  "Mobile",
+  "Email",
   "First Name",
   "Last Name",
-  "Email",
-  "Company",
+  "Mobile",
+  "Gender",
   "Action",
 ];
 
@@ -25,121 +26,12 @@ export default function AllUsersTable({editView,setEditView}) {
       company: "0",
     },
 
-    {
-        mobile: "Yasith",
-        fname: "Yasith",
-        lname: "Sandesh",
-        email: "yaithsandesh@gmail.com",
-        company: "0",
-      },
-
-      {
-        mobile: "Yasith",
-        fname: "Yasith",
-        lname: "Sandesh",
-        email: "yaithsandesh@gmail.com",
-        company: "0",
-      },
-
-      {
-        mobile: "Yasith",
-        fname: "Yasith",
-        lname: "Sandesh",
-        email: "yaithsandesh@gmail.com",
-        company: "0",
-      },
-
-      {
-        mobile: "Yasith",
-        fname: "Yasith",
-        lname: "Sandesh",
-        email: "yaithsandesh@gmail.com",
-        company: "0",
-      },
-
-      {
-        mobile: "Yasith",
-        fname: "Yasith",
-        lname: "Sandesh",
-        email: "yaithsandesh@gmail.com",
-        company: "0",
-      },
-  
-      {
-          mobile: "Yasith",
-          fname: "Yasith",
-          lname: "Sandesh",
-          email: "yaithsandesh@gmail.com",
-          company: "0",
-        },
-  
-        {
-          mobile: "Yasith",
-          fname: "Yasith",
-          lname: "Sandesh",
-          email: "yaithsandesh@gmail.com",
-          company: "0",
-        },
-  
-        {
-          mobile: "Yasith",
-          fname: "Yasith",
-          lname: "Sandesh",
-          email: "yaithsandesh@gmail.com",
-          company: "0",
-        },
-  
-        {
-          mobile: "Yasith",
-          fname: "Yasith",
-          lname: "Sandesh",
-          email: "yaithsandesh@gmail.com",
-          company: "0",
-        },
-
-        {
-            mobile: "Yasith",
-            fname: "Yasith",
-            lname: "Sandesh",
-            email: "yaithsandesh@gmail.com",
-            company: "0",
-          },
-      
-          {
-              mobile: "Yasith",
-              fname: "Yasith",
-              lname: "Sandesh",
-              email: "yaithsandesh@gmail.com",
-              company: "0",
-            },
-      
-            {
-              mobile: "Yasith",
-              fname: "Yasith",
-              lname: "Sandesh",
-              email: "yaithsandesh@gmail.com",
-              company: "0",
-            },
-      
-            {
-              mobile: "Yasith",
-              fname: "Yasith",
-              lname: "Sandesh",
-              email: "yaithsandesh@gmail.com",
-              company: "0",
-            },
-      
-            {
-              mobile: "Yasith",
-              fname: "Yasith",
-              lname: "Sandesh",
-              email: "yaithsandesh@gmail.com",
-              company: "0",
-            },
   ]);
 
- 
 
+  const allUsersFetch =async ()=>{
+    await axios.get('http://localhost:8000/api/all-user').then((res)=>{console.log(res.data.allUser)}).catch((error)=>{console.log(error)});
+  }
  
 
   return (
