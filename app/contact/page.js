@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ContactImage from "public/constact.svg";
 import axios from "axios";
 
+
 const Contact = () => {
 
   const [name, setName] = useState();
@@ -20,6 +21,7 @@ const Contact = () => {
     
     await axios.post('http://localhost:8000/api/submit-form', formData).then((res)=>{
       console.log(res.data);
+
       
       let name = document.getElementById('name');
       let email = document.getElementById('email');
@@ -34,6 +36,9 @@ const Contact = () => {
     });
 
   }
+
+ 
+ 
 
   return (
     <div>
