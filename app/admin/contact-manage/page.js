@@ -2,6 +2,50 @@ import React from "react";
 import AdminSideBar from "../../../components/AdminSideBar";
 import FormCard from "../../../components/FormCard";
 
+const formObj = [
+  {
+    "id":"DNS-0001",
+    "name":"Nethmina Sandaruwan",
+    "email":"nethminas42@gmail.com",
+    "msg":"The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail. For most web applications the Gmail API is the best choice for authorized access to a user's Gmail data and is suitable for various applications, such as:",
+    "date":"2023-10-26",
+    "read":true,
+  },
+  {
+    "id":"DNS-0001",
+    "name":"Nethmina Sandaruwan",
+    "email":"nethminas42@gmail.com",
+    "msg":"The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail. For most web applications the Gmail API is the best choice for authorized access to a user's Gmail data and is suitable for various applications, such as:",
+    "date":"2023-10-26",
+    "read":false,
+  },
+  {
+    "id":"DNS-0001",
+    "name":"Nethmina Sandaruwan",
+    "email":"nethminas42@gmail.com",
+    "msg":"The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail. For most web applications the Gmail API is the best choice for authorized access to a user's Gmail data and is suitable for various applications, such as:",
+    "date":"2023-10-26",
+    "read":false,
+  },
+  {
+    "id":"DNS-0001",
+    "name":"Nethmina Sandaruwan",
+    "email":"nethminas42@gmail.com",
+    "msg":"The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail. For most web applications the Gmail API is the best choice for authorized access to a user's Gmail data and is suitable for various applications, such as:",
+    "date":"2023-10-26",
+    "read":true,
+  },
+  {
+    "id":"DNS-0001",
+    "name":"Nethmina Sandaruwan",
+    "email":"nethminas42@gmail.com",
+    "msg":"The Gmail API is a RESTful API that can be used to access Gmail mailboxes and send mail. For most web applications the Gmail API is the best choice for authorized access to a user's Gmail data and is suitable for various applications, such as:",
+    "date":"2023-10-26",
+    "read":false,
+  },
+
+];
+
 const ContactManage = () => {
   return (
     <div className="flex flex-col w-full">
@@ -37,7 +81,9 @@ const ContactManage = () => {
            
            {/* list */}
            <div>
-           <FormCard/>
+           {formObj.map((data)=>(
+            <FormCard read={data.read} ID={data.id} NAME={data.name} EMAIL={data.email} MSG={data.msg} DATE={data.date}/>
+           ))}
            </div>
           </div>
 
