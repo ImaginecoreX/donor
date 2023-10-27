@@ -548,6 +548,7 @@ backdrop-filter: blur(6px);
 
 
 
+
 .block-btn{
   width: auto;
   height: auto;
@@ -629,4 +630,8 @@ backdrop-filter: blur(6px);
   border-radius: 20px;
   background: rgba(50, 53, 54, 0.50);
   backdrop-filter: blur(20px);
+
+.adminSidebar-scape{
+  width: calc(100% - 250px);
+
 }
