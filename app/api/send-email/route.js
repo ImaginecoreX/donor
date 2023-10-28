@@ -40,6 +40,7 @@ export async function POST (request) {
           to:emailData.to,
           subject:emailData.subject,
           text:emailData.text,
+          html:emailData.html
         });
         
   
