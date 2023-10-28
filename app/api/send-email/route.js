@@ -31,8 +31,7 @@ export async function POST (request) {
         },
       });
 
-
-  
+      
       try {
         // Send mail with defined transport object
         await transporter.sendMail({
