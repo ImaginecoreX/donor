@@ -22,6 +22,7 @@ const Contact = () => {
     await axios.post('http://localhost:8000/api/submit-form', formData).then((res)=>{
       console.log(res.data);
 
+      const dataObj = res.data.newForm;
       
       let name = document.getElementById('name');
       let email = document.getElementById('email');
@@ -30,6 +31,34 @@ const Contact = () => {
       name.value = '';
       email.value = '';
       msg.value = '';
+      
+      console.log(dataObj.id);
+      console.log(dataObj.name);
+      console.log(dataObj.email);
+      console.log(dataObj.msg);
+
+      const sendEmail = async ()=>{
+    
+        await axios.post('http://localhost:3000/api/send-email', 
+        {
+          "to":dataObj.email,
+          "subject":"GiveDonor Donation Request",
+          "html":"<div style='color:red' class='d-icon'>"+dataObj.name+", "+dataObj.msg+"</div>"
+      }).then((res)=>{
+          console.log(res.data);
+        }).catch((err)=>{
+          console.log(err);
+        });
+    
+      }
+      
+      if(res.data.status==="success"){
+        sendEmail();
+      }
+      
+      
+
+      // sendEmail();
 
     }).catch((err)=>{
       console.log(err);
@@ -37,11 +66,7 @@ const Contact = () => {
 
   }
 
-  const sendEmail = async ()=>{
-    
-    await axios.post().then().catch();
-
-  }
+ 
  
  
 

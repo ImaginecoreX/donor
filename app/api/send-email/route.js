@@ -3,6 +3,8 @@ const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
 import { NextResponse } from 'next/server';
 
+//http://localhost:3000/api/send-email
+
 export async function POST (request) {
 
 
