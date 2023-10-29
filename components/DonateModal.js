@@ -53,7 +53,6 @@ const currency = [
 
 
 const DonateModal = ({click}) => {
-
   
   const [isDedicated, setIsDedicated] = useState(false);
   const [isGiveOnce, setIsGiveOnce] = useState(false);
