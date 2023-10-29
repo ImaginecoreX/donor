@@ -1,8 +1,75 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import ContactImage from "public/constact.svg";
+import axios from "axios";
+
 
 const Contact = () => {
+
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [msg, setMsg] = useState();
+
+  const formData = {
+    name:name,
+    email:email,
+    msg:msg
+  }
+
+  const submitForm = async ()=>{
+    
+    await axios.post('http://localhost:8000/api/submit-form', formData).then((res)=>{
+      console.log(res.data);
+
+      const dataObj = res.data.newForm;
+      
+      let name = document.getElementById('name');
+      let email = document.getElementById('email');
+      let msg = document.getElementById('msg');
+
+      name.value = '';
+      email.value = '';
+      msg.value = '';
+      
+      console.log(dataObj.id);
+      console.log(dataObj.name);
+      console.log(dataObj.email);
+      console.log(dataObj.msg);
+
+      const sendEmail = async ()=>{
+    
+        await axios.post('http://localhost:3000/api/send-email', 
+        {
+          "to":dataObj.email,
+          "subject":"GiveDonor Donation Request",
+          "html":"<div style='color:red' class='d-icon'>"+dataObj.name+", "+dataObj.msg+"</div>"
+      }).then((res)=>{
+          console.log(res.data);
+        }).catch((err)=>{
+          console.log(err);
+        });
+    
+      }
+      
+      if(res.data.status==="success"){
+        sendEmail();
+      }
+      
+      
+
+      // sendEmail();
+
+    }).catch((err)=>{
+      console.log(err);
+    });
+
+  }
+
+ 
+ 
+ 
+
   return (
     <div>
       <section className="flex flex-col items-center min-h-screen w-ful pt-[120px] pb-[100px] ss:pb-[40px] justify-center">
@@ -30,6 +97,8 @@ const Contact = () => {
                     type="text"
                     className="w-full h-[40px] border-[1px] px-[20px] font-family-Fira-Sans text-[15px] rounded-[12px]"
                     placeholder="eg: Adam"
+                    onChange={(event)=>{event.preventDefault(), setName(event.target.value)}}
+                    id="name"
                   />
                 </div>
                 <div className="flex flex-col gap-[8px]">
@@ -42,6 +111,8 @@ const Contact = () => {
                     type="email"
                     className="w-full h-[40px] border-[1px] px-[20px] font-family-Fira-Sans text-[15px] rounded-[12px]"
                     placeholder="example@domain.com"
+                    onChange={(event)=>{event.preventDefault(), setEmail(event.target.value)}}
+                    id="email"
                   />
                 </div>
                 <div className="flex flex-col gap-[8px]">
@@ -54,12 +125,14 @@ const Contact = () => {
                     type="text"
                     className="w-full h-[120px] min-h-[80px] max-h-[280px] border-[1px] px-[20px] py-[20px] font-family-Fira-Sans text-[15px] rounded-[12px]"
                     placeholder="Type Your Message"
+                    onChange={(event)=>{event.preventDefault(),setMsg(event.target.value)}}
+                    id="msg"
                   />
                 </div>
 
                 <div className="pt-[20px] pb-[30px]">
                   <div>
-                    <button className="w-full h-[40px] bg-black rounded-[12px] text-white">
+                    <button onClick={submitForm} className="w-full h-[40px] bg-black rounded-[12px] text-white">
                       Sent
                     </button>
                   </div>
