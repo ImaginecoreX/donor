@@ -90,7 +90,7 @@ const AdminEvent = () => {
                                             <div className='flex bg-gray-50 border box-border px-4 py-4 mb-3'>
                                                 <div className='w-4/12'>{event.title}</div>
                                                 <div className='w-4/12'>{event.location_link}</div>
-                                                <div className='w-3/12'>{event.time}</div>
+                                                <div className='w-3/12'>{event.from}</div>
                                                 <div className='w-1/12 flex justify-center items-center gap-4'>
                                                     <div onClick={() => openModal(event.id)}>
                                                         <Image src={edit} className='h-[20px] w-[20px]' />
@@ -208,7 +208,7 @@ const AdminEvent = () => {
                                             autoComplete="email"
                                             value={modalEventData.description}
                                             onChange={(e) => setModalEventData({ ...modalEventData, description: e.target.value })}
-                                            rows={40}
+                                            rows={30}
                                             cols={5}
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -245,13 +245,13 @@ const AdminEvent = () => {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Date
+                                        Date & Time (from)
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            type="date"
-                                            value={modalEventData.date}
-                                            onChange={(e) => setModalEventData({ ...modalEventData, description: e.target.value })}
+                                            type="datetime-local"
+                                            // value={modalEventData.date}
+                                            // onChange={(e) => setModalEventData({ ...modalEventData, description: e.target.value })}
                                             autoComplete="postal-code"
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -260,24 +260,11 @@ const AdminEvent = () => {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Time (from)
+                                        Date & Time (to)
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            type="time"
-                                            autoComplete="postal-code"
-                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="sm:col-span-2">
-                                    <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Time (to)
-                                    </label>
-                                    <div className="mt-2">
-                                        <input
-                                            type="time"
+                                            type="datetime-local"
                                             autoComplete="postal-code"
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />

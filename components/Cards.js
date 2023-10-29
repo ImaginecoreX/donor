@@ -129,11 +129,6 @@ export const MemberCard = () => {
 
 export const EventCard = ({ events }) => {
 
-  const router = useRouter(); 
-  // const handleButtonClick = () => {
-  //   router.push(`/events/${events.id}`, { scroll: false });
-  // };
-
   return (
     <div className="w-[280px] h-auto bgs-white-10 shadow-primary rounded-[12px] box-border p-[30px]">
       <div>
@@ -142,7 +137,6 @@ export const EventCard = ({ events }) => {
         </div>
       </div>
       <div className="pt-[20px] border-b-[1px] pb-[20px]">
-        {/* use 81 characters in description */}
         <div className="font-family-Roboto text-[16px] font-normal">
           {events.description.length > 150
             ? `${events.description.slice(0, 150)}...`
@@ -150,10 +144,6 @@ export const EventCard = ({ events }) => {
           <Link href={`/events/${events.id}`} className="color-yellow-100" passHref>
             show more
           </Link>
-          {/* <button type="button" className="color-yellow-100" onClick={handleButtonClick}>
-          show more
-          </button> */}
-
         </div>
       </div>
       <div className="flex items-center justify-between pt-[20px]">
@@ -168,7 +158,9 @@ export const EventCard = ({ events }) => {
           <div className="w-[18px] h-[18px] set-bg location-img"></div>
           <div>Location</div>
         </div>
-        <a className="text-blue-600 " href="#"> View Location</a>
+        <Link href={`/events/${events.id}#location`} className="text-blue-600 " passHref>
+          View Location
+        </Link>
       </div>
     </div>
   );
@@ -177,11 +169,16 @@ export const EventCard = ({ events }) => {
 
 // ###########################################################################
 
-export const DonationCards = () => {
+export const DonationCards = ({ events }) => {
   return (
     <div className="bg-red-100 h-auto w-full box-border px-4 py-4 rounded mt-4">
-      <label className="font-family-Roboto-Serif text-[18px] ">Book Donation</label><br />
-      <p className="mt-2 font-family-Roboto-Slab ">Books are not just a collection of pages; they are vessels of knowledge, imagination, and hope. Our charity organization <a className="color-yellow-300">see more...</a></p>
+      <label className="font-family-Roboto-Serif text-[18px] ">{events.name}</label><br />
+      <p className="mt-2 font-family-Roboto-Slab ">{events.description.length > 140
+        ? `${events.description.slice(0, 140)}...`
+        : events.description}&nbsp;
+        <Link href={`/events/${events.id}`} className="color-yellow-100" passHref>
+          show more
+        </Link></p>
     </div>
   )
 }
