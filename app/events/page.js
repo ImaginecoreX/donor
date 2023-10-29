@@ -11,7 +11,6 @@ const Events = () => {
   const loadEvents = async () => {
     await axios.get("http://localhost:8000/api/get-all-event")
       .then((response) => {
-        console.log(response.data);
         setEventData(response.data.allEvent);
       })
       .catch((error) => {
@@ -53,13 +52,13 @@ const Events = () => {
                           id: event.id,
                           name: event.title,
                           description: event.description,
-                          time: event.time,
+                          time: event.from,
                           location: event.location_link
                         }}
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
               </div>
@@ -86,7 +85,7 @@ const Events = () => {
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
 
@@ -114,7 +113,7 @@ const Events = () => {
                       />
                     );
                   } else {
-                    return null; // Or you can return a placeholder or empty element
+                    return null; 
                   }
                 })}
               </div>

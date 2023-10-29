@@ -41,14 +41,13 @@ const AddNewEvent = () => {
                                 </div>
 
                                 <div className="sm:col-span-4">
-                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    <label htmlFor="text" className="block text-sm font-medium leading-6 text-gray-900">
                                         Event Description
                                     </label>
                                     <div className="mt-2">
                                         <textarea
-                                            type="email"
-                                            autoComplete="email"
-                                            rows={40}
+                                            type="text"
+                                            rows={30}
                                             cols={5}
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -83,11 +82,11 @@ const AddNewEvent = () => {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Date
+                                        Date & Time (from)
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            type="date"
+                                            type="datetime-local"
                                             autoComplete="postal-code"
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
@@ -96,24 +95,11 @@ const AddNewEvent = () => {
 
                                 <div className="sm:col-span-2">
                                     <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Time (from)
+                                       Date & Time (to)
                                     </label>
                                     <div className="mt-2">
                                         <input
-                                            type="time"
-                                            autoComplete="postal-code"
-                                            className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="sm:col-span-2">
-                                    <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Time (to)
-                                    </label>
-                                    <div className="mt-2">
-                                        <input
-                                            type="time"
+                                            type="datetime-local"
                                             autoComplete="postal-code"
                                             className="block w-full rounded-md box-border px-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         />
